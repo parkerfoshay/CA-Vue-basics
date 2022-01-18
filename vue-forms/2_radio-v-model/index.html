@@ -22,7 +22,7 @@
         <h1 class="text-center">{{title}}</h1>
         <div class="d-flex">
           <div class="row">
-            <form action="" @submit.prevent="onSubmit">
+            <form action="">
               <div class="form-group mt-2">
                 <label for="name">Enter your name:</label>
                 <input
@@ -46,7 +46,7 @@
                   type="radio"
                   id="dog"
                   value="Dog"
-                  v-model="selected"
+                  v-model="selectedPet"
                 />
                 <label class="form-check-label" for="dog">Dog</label>
                 <br />
@@ -55,7 +55,7 @@
                   type="radio"
                   id="cat"
                   value="Cat"
-                  v-model="selected"
+                  v-model="selectedPet"
                 />
                 <label class="form-check-label" for="cat">Cat</label>
                 <br />
@@ -64,7 +64,7 @@
                   type="radio"
                   id="bird"
                   value="Bird"
-                  v-model="selected"
+                  v-model="selectedPet"
                 />
                 <label class="form-check-label" for="bird">Bird</label>
                 <br />
@@ -73,21 +73,21 @@
                   type="radio"
                   id="fish"
                   value="Fish"
-                  v-model="selected"
+                  v-model="selectedPet"
                 />
                 <label class="form-check-label" for="fish">Fish</label>
                 <br />
-                <span>Pet selected: {{ selected }}</span>
+                <span>Pet selected: {{ selectedPet }}</span>
               </div>
               <br />
-              <p style="white-space: pre-line">{{ textAreaInput }}</p>
+              <p style="white-space: pre-line">{{ bioInput }}</p>
               <br />
               <div class="form-group mt-2">
                 <label for="bioInput">Show Bio:</label>
                 <textarea
                   id="bioInput"
                   class="form-control"
-                  v-model="textAreaInput"
+                  v-model="bioInput"
                   placeholder="Tell us about yourself"
                 ></textarea>
               </div>
@@ -95,7 +95,6 @@
             </form>
           </div>
         </div>
-        
       </div>
     </div>
 

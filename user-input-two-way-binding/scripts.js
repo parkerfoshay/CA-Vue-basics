@@ -1,22 +1,27 @@
 let app = Vue.createApp({
   data() {
     return {
-      title: "Hello World",
-      styleId: "main-section",
-      disabled: false,
-      userInput: "Type your message here"
+      name: "",
+      selected: "",
+      textAreaInput: "",
     };
   },
 
   methods: {
-    darkMode() {
-      if(!this.disabled) {
-        this.styleId = "main-section-dark"
-        this.disabled = true;
-      } else {
-        this.styleId = "main-section"
-        this.disabled = false;
-      }
-    }
-  }
+    onSubmit() {
+      let userInput = {
+        name: this.name,
+        pet: this.selected,
+        bio: this.textAreaInput,
+      };
+
+      console.log(
+        `The user entered the following: ${userInput.name} ${userInput.pet} ${userInput.bio}`
+      );
+
+      this.name = "";
+      this.selected = "";
+      this.textAreaInput = "";
+    },
+  },
 }).mount("#app");
