@@ -1,16 +1,6 @@
 const itemList = {
-  props: {
-    item: String,
-  },
-
-  methods: {
-    onClick(event) {
-      this.$emit("item-deleted", event.target.id);
-    },
-  },
-
   template: `
-        <li class="list-group-item" @click="onClick($event)">{{ item }}</li>
+        <li class="list-group-item">item</li>
       `,
 };
 
@@ -44,6 +34,7 @@ const itemInput = {
             </form>
     `,
 };
+
 
 let app = Vue.createApp({
   data() {

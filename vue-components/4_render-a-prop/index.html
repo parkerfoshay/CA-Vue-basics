@@ -22,8 +22,6 @@
           v-for="(item, index) in itemsListArray"
           :item="item"
           :key="index"
-          :id="index"
-          @item-deleted="deleteItem"
         ></item-list>
       </ul>
       <item-input @item-added="addItems"></item-input>

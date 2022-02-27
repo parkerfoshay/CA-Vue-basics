@@ -1,4 +1,20 @@
-export default {
+const itemList = {
+  props: {
+    item: String,
+  },
+
+  methods: {
+    onClick(event) {
+      this.$emit("item-deleted", event.target.id);
+    },
+  },
+
+  template: `
+        <li class="list-group-item" @click="onClick($event)">{{ item }}</li>
+      `,
+};
+
+const itemInput = {
   data() {
     return {
       item: "",
@@ -28,3 +44,26 @@ export default {
             </form>
     `,
 };
+
+let app = Vue.createApp({
+  data() {
+    return {
+      itemsListArray: [],
+    };
+  },
+
+  components: {
+    itemInput,
+    itemList,
+  },
+
+  methods: {
+    addItems(itemText) {
+      this.itemsListArray.push(itemText);
+    },
+
+    deleteItem(itemIndex) {
+      this.itemsListArray.splice(parseInt(itemIndex), 1);
+    },
+  },
+}).mount("#app");

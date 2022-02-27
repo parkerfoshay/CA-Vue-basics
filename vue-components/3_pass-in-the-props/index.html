@@ -18,12 +18,12 @@
   <body>
     <div id="app">
       <ul class="list-group list-group-flush">
+        <!-- Add item list below: -->
         <item-list
           v-for="(item, index) in itemsListArray"
           :item="item"
           :key="index"
           :id="index"
-          @item-deleted="deleteItem"
         ></item-list>
       </ul>
       <item-input @item-added="addItems"></item-input>
